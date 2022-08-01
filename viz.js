@@ -80,7 +80,7 @@ function loadBarChartData()
     dataRenewablesYear1 = dataRenewables.filter(function (d) {
         return d['Year'] == compareYear1
     });
-    console.log(dataRenewablesYear1);
+    // console.log(dataRenewablesYear1);
 
     dataRenewablesOnlyYear1 = dataRenewablesYear1.map(function(d) {
         return {
@@ -92,15 +92,15 @@ function loadBarChartData()
         }
     });
     dataRenewablesOnlyYear1 = dataRenewablesOnlyYear1[0];
-    console.log(dataRenewablesOnlyYear1);
+    // console.log(dataRenewablesOnlyYear1);
 
     dataBar1 = Object.values(dataRenewablesOnlyYear1);
-    console.log(dataBar1);
+    // console.log(dataBar1);
 
     dataRenewablesYear2 = dataRenewables.filter(function (d) {
         return d['Year'] == compareYear2
     });
-    console.log(dataRenewablesYear2);
+    // console.log(dataRenewablesYear2);
 
     dataRenewablesOnlyYear2 = dataRenewablesYear2.map(function(d) {
         return {
@@ -112,10 +112,10 @@ function loadBarChartData()
         }
     });
     dataRenewablesOnlyYear2 = dataRenewablesOnlyYear2[0];
-    console.log(dataRenewablesOnlyYear2);
+    // console.log(dataRenewablesOnlyYear2);
 
     dataBar2 = Object.values(dataRenewablesOnlyYear2);
-    console.log(dataBar2);
+    // console.log(dataBar2);
 }
 
 async function loadCSVData()
@@ -152,7 +152,7 @@ async function loadCSVData()
     });
     //console.log(dataRenewables)
 
-    // Extract years column for drop downs
+    // Extract years column for dropdowns
     dataYears = dataCSV.map(function(d) {
         return  parseInt(d.Year);
     });
@@ -173,7 +173,7 @@ function drawPieCharts()
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-    console.log(pie(dataPie1));
+    // console.log(pie(dataPie1));
     // Draw text for years
     d3.select("svg")
         .append("g")
@@ -269,8 +269,6 @@ function drawPieCharts()
 function drawBarCharts()
 {
     loadBarChartData();
-
-    var data = [4,8,15,16,23];
 
     var x = d3.scaleBand().domain(['Wind','Solar','Hydro','Bio','Geothermal']).range([0,300]);
     var y = d3.scaleLinear().domain([0,400000]).range([300,0]);
@@ -403,7 +401,7 @@ function drawLegendBarChart()
         .enter()
         .append("rect")
         .attr("x", 1000)
-        .attr("y", function(d,i){ return 320 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 320 + i*(size+5)})
         .attr("width", size)
         .attr("height", size)
         .style("fill", function(d,i){ return renewableColors[i]});
@@ -413,7 +411,7 @@ function drawLegendBarChart()
         .enter()
         .append("text")
         .attr("x", 1000 + size*1.2)
-        .attr("y", function(d,i){ return 320 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 320 + i*(size+5) + (size/2)})
         .style("fill", function(d,i){ return renewableColors[i]})
         .text(function(d){ return d})
         .attr("text-anchor", "left")
@@ -428,7 +426,7 @@ function drawLegendPieChart()
         .enter()
         .append("rect")
         .attr("x", 1000)
-        .attr("y", function(d,i){ return 70 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 70 + i*(size+5)})
         .attr("width", size)
         .attr("height", size)
         .style("fill", function(d,i){ return color[i]});
@@ -438,7 +436,7 @@ function drawLegendPieChart()
         .enter()
         .append("text")
         .attr("x", 1000 + size*1.2)
-        .attr("y", function(d,i){ return 70 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 70 + i*(size+5) + (size/2)})
         .style("fill", function(d,i){ return color[i]})
         .text(function(d){ return d})
         .attr("text-anchor", "left")
@@ -515,7 +513,7 @@ function drawAnnotationsPage2()
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: [renewableColors[0]],
             x: 106.25,
@@ -530,7 +528,7 @@ function drawAnnotationsPage2()
                 align: "left"
             },
             connector: {
-                end: "arrow", // 'dot' also available
+                end: "arrow"
             },
             color: [renewableColors[0]],
             x: 700,
@@ -545,7 +543,7 @@ function drawAnnotationsPage2()
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: [renewableColors[1]],
             x: 162.5,
@@ -560,7 +558,7 @@ function drawAnnotationsPage2()
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: [renewableColors[1]],
             x: 765,
@@ -596,7 +594,7 @@ function drawAnnotationsIndex()
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: ['gray'],
             x: 200,
@@ -611,7 +609,7 @@ function drawAnnotationsIndex()
                 align: "left"
             },
             connector: {
-                end: "arrow", // 'dot' also available
+                end: "arrow"
             },
             color: ['gray'],
             x: 750,
@@ -620,13 +618,13 @@ function drawAnnotationsIndex()
             dx: -275
         },{
             note: {
-                label: "A significant reason for the drop in coal generated share of electricity is the huge growth in renewables between 2006 and 2021",
+                label: "A significant reason for the drop in coal generated share of electricity is the huge growth in generation from renewable sources between 2006 and 2021",
                 title: "Growth of renewables",
                 wrap: 200,
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: ['green'],
             x: 700,
@@ -635,19 +633,19 @@ function drawAnnotationsIndex()
             dx: -250
         },{
             note: {
-                label: "Natural gas based generation also grew a lot, but natural gas produces less than half the CO2 emissions of coal",
+                label: "Natural gas based generation also grew a lot in this period; however, natural gas produces less than half the CO2 emissions of coal",
                 title: "Natural gas growth",
                 wrap: 200,
                 align: "left"
             },
             connector: {
-                end: "arrow" // 'dot' also available
+                end: "arrow"
             },
             color: ['orange'],
             x: 800,
-            y: 260,
-            dy: 175,
-            dx: -250
+            y: 200,
+            dy: 170,
+            dx: -125
         }].map(function(d){ return d});
 
     const makeAnnotations = d3.annotation()
@@ -669,30 +667,20 @@ function drawAnnotationsIndex()
 
 async function initIndex()
 {
-    // var data = [4,8,15,16,23,42];
-    // console.log(data);
-
     await loadCSVData();
     drawPieCharts();
     drawLegendPieChart();
     drawAnnotationsIndex();
-//    var color = ['pink','lightyellow','lightgreen','lightcyan','lightblue','violet'];
-
 }
 
 async function initPage2()
 {
-    //var data = [4,8,15,16,23,42];
-    //console.log(data);
-
     await loadCSVData();
     drawPieCharts();
     drawBarCharts();
     drawLegendPieChart();
     drawLegendBarChart();
     drawAnnotationsPage2();
-//    var color = ['pink','lightyellow','lightgreen','lightcyan','lightblue','violet'];
-
 }
 
 async function initPage3()
