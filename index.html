@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<script src='https://d3js.org/d3.v5.min.js'></script>
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+<script src='viz.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>CS 416 Narrative Visualization - komminen@</title>
+</head>
+<body onload="initIndex()" style="font-family: Verdana">
+<div>
+    <h1 style="alignment: center">Where does the electricity powering EVs come from in the United States?</h1>
+    <br>
+    <p>
+        It is a common refrain, especially among skeptics of EV adoption to claim "You're just shifting the emissions
+        from the car to a much higher emissions coal plant."
+    </p>
+    <p>
+        Let's look at the data to answer this question. This data is for the USA and is sourced from the <a href="https://www.eia.gov/">U.S. Energy Information Administration.</a>
+    </p>
+    <br>
+</div>
+<div>
+    <button onclick="window.location='index.html';">1</button>
+    <button onclick="window.location='page2.html';">2</button>
+    <button onclick="window.location='page3.html';">3</button>
+    <button onclick="window.location='page2.html';">Next</button>
+    <p>
+        Use the buttons above to advance the slideshow or directly jump to a specific page
+    </p>
+    <br>
+    <p style="color: red">
+        This slide show is interactive. Please hover over elements of the charts below to get more details. On this page, you can also change year selections in the two dropdowns below to compare other years.
+    </p>
+</div>
+<br>
+<div>
+    <svg width=1600 height=1200>
+    </svg>
+</div>
+</body>
+</html>
